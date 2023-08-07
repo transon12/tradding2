@@ -1,0 +1,322 @@
+/* =========== KINH NGHIỆM CHỨNG KHOÁN ============ */
+.exp__stock .snt-auto{
+    margin: 32px 40px;
+}
+.exp__stock .snt-auto > .col-inner{
+    background-color: #fff;
+    padding: 44px 32px 0px 32px;
+}
+.exp__stock .snt-auto > .col-inner+.col-inner{
+    padding-top: 0;
+}
+.stocker-heading-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stocker-heading-text h1{
+    font-size: 24px;
+    flex: 1;
+    margin-bottom: 20px;
+}
+.category-uptrend, .category-distribution, .category-other{
+    background-color: #fff;
+    margin: 0 40px 16px;
+}
+hr.hr-stock-title{
+    /* border-color: #E1E3E7; */
+    margin: 20px 0;
+}
+/* --------- blog ------------- */
+.content-body-text h4{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1D2939;
+}
+.exp__stock .des-blog{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #667085;
+}
+.stock-load-more{
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.info-post,.info-posted,.info-date{
+    display: flex;
+    align-items: center;
+}
+.info-post li.info-posted-author{
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.info-post li.info-posted-author img{
+    border: 1px solid #EAECF0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.info-post li.info-post-date{
+    display: flex;
+    align-items: center;
+    margin-left: 36px;
+    margin-bottom: 0;
+    position: relative;
+}
+.info-post li.info-post-date svg{
+    margin-right: 5px;
+}
+.info-post li.info-post-date::before{
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: -17px;
+    width: 4px;
+    height: 4px;
+    background: #98A2B3;
+    border-radius: 50%;
+}
+.content-body-img{
+    text-align: right;
+}
+.content-body-img img{
+    width: 100%;
+    border-radius: 8px;
+}
+@media screen and (max-width: 667px){   
+    .category-exp,.category-uptrend, .category-distribution{
+        margin: 0px 0px 16px;
+    }
+}
+/* ========================== CHI TIẾT CỔ PHIẾU ========================== */
+
+.category-details{
+    background-color: #fff;
+}
+.stock-details {
+    margin: 32px 40px !important;
+}
+
+/* -------------------- header ---------------------- */
+.stock-icon-arrow{
+    margin-right: 8px;
+}
+/* ------------------ details-info ---------------- */
+
+.comp-info-svg{
+    margin-right: 11px;
+}
+.comp-info-svg > *{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 15px 4px #eeee;
+    object-fit: contain;
+}
+.name-comp-info {
+    display: flex;
+    align-items: center;
+}
+.name-comp-info  .comp-info-details{
+    flex: 1;
+}
+.info-detail-name h1 {
+    margin-bottom: 0 !important;
+}
+.info-details-des {
+    display: flex;
+    align-items: center;
+}
+span.name-acr, .info-details-des svg{
+    margin-right: 10px;
+}
+.details-info-comp {
+    margin-top: 19px;
+}
+
+.details-info-comp>div{
+    padding: 0 15px 0 !important;
+}
+
+/* ------------------------- details-content ---------------------------- */
+
+.details-content-comp {
+    display: grid;
+}
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: #16C784;
+    border-radius: 50%;
+    margin-right: 7px;
+
+}
+.content-des {
+    display: flex;
+    align-items: baseline;
+    color: #16C784;
+}
+.details-content {
+    display: flex;
+    padding: 10px 0 !important;
+}
+.content-price {
+    display: flex;
+    align-items: baseline;
+    float: left;
+}
+.content-price .price-stocks{
+    margin-right: 5px;
+    font-size: 30px;
+    font-weight: 700;
+}
+.content-des svg {
+    align-self: self-start;
+    margin-left: 5px;
+}
+h3.percent{
+    color: #EA3943;
+    margin-left: 10px;
+}
+.content-des p, p.content-price-text {
+    font-size: 11px;
+}
+.content-date h4, .content-profit h4, .content-capit h4, .content-divid h4, .content-pe h4{
+    color: #101828;
+}
+.details-content-text {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* ------------------------- details-text ---------------------------- */
+.details-text {
+    padding: 0 !important;
+}
+.nav-line-bottom > li > a:before{
+    background-color: #EA3943  !important;
+}
+.nav-size-xlarge>li>a{
+    font-size: 16px !important;
+    font-weight: 500;
+}
+li.tab.has-icon.active>a{
+    color: #EA3943 !important;
+}
+.tabbed-content .nav{
+    border-bottom: 1px solid #EAECF0;
+}
+li.tab.has-icon.tongquan {
+    margin-right: 24px;
+}
+h5.post-title{
+    font-size: 16px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+h5.post-title:hover{
+    color: var(--color-main)!important;
+}
+/* ------------ tổng quan ------------ */
+#tab_tổng-quan p{
+    font-size: 16px;
+    text-align: justify;
+}
+.tab-panels {
+    padding-top: 32px !important;
+}
+/* ---------------- tin tức --------- */
+.info-news-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+p.from_the_blog_excerpt {
+    height: 44px;
+    margin-top: 8px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.info-date {
+    align-items: baseline;
+}
+.info-date svg {
+    margin-right: 5px;
+}
+
+/* -------------------------------- sigin details stock -------------------- */
+.sigin-details-stock{
+    padding: 0 !important;
+}
+.text-sigin-details {
+    text-align: center !important;
+}
+.text-sigin-details p{
+    max-width: 50%;
+    display: inline-flex;
+}
+.sigin-btn {
+    text-align: center;
+}
+.is-outline.primary {
+    color: #344054 !important;
+}
+.button.primary.lowercase:hover{
+    color: #344054;
+}
+
+@media screen and (max-width: 667px) {
+    .text-sigin-details p{
+        max-width: 100%;
+    }
+}
+/* ======================= KHUYẾN NGHỊ ĐẦU TƯ ================================  */
+span.gia-chot-loi {
+    color: #16C784;
+}
+span.gia-chot-lo {
+    color: #EA3943;
+}
+
+/* ============================== THANH TOÁN ==============================  */
+/* ----------------------------- Cổ phiếu theo dõi -------------------------------- */
+.filter-add-ck{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 18px;
+    height: 34px;
+    background: #F2F4F7;
+    border-radius: 8px;
+    border: none;
+    box-shadow: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: #101828;
+    margin-left: 16px;
+}
+.icon-add{
+    background-color: #ffc629;
+    display: flex;
+    padding: 9px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0 8px 8px 0;
+}
+.filter-add-ck input[type=text]{
+    border-radius: 8px;
+}

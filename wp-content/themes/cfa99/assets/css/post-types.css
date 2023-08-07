@@ -1,0 +1,146 @@
+.blog-archive{
+    padding: 15px 0;
+    background-color: #fff;
+}
+.title-stocks{
+    color: #1D2939;
+    font-size: 24px;
+    line-height: 32px;    
+    margin-bottom: 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 12px 32px;
+}
+.post-type-archive-uptrend_stocks .title-stocks{
+    padding-left: 0;
+    padding-right: 0;
+}
+.sub-title{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #344054;
+    margin-top: 2px;
+}
+a.rm{
+    color: #1990FF;
+    font-size: 14px;
+    font-weight: 500;
+}
+a.rm::after{
+    content:'';
+    width: 6px;
+    height: 12px;
+    margin-left: 9px;
+    display: inline-block;
+    margin-bottom: -2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='12' viewBox='0 0 6 12' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.313134 11.0202C0.117871 10.8249 0.117871 10.5083 0.313134 10.3131L4.62625 5.99996L0.313134 1.68685C0.117872 1.49158 0.117872 1.175 0.313134 0.979739C0.508396 0.784477 0.824978 0.784477 1.02024 0.979739L5.68691 5.64641C5.88217 5.84167 5.88217 6.15825 5.68691 6.35351L1.02024 11.0202C0.824978 11.2154 0.508396 11.2154 0.313134 11.0202Z' fill='%231990FF'/%3E%3C/svg%3E");
+}
+.archive .post-item .post-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1D2939;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    height: 48px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.archive .post-item .box-image{
+    border-radius: 8px;
+}
+.archive .post-item .box-text{
+    padding-bottom: 0;
+}
+.archive .post-item .from_the_blog_excerpt {
+    color: #667085;
+    font-size: 14px;
+    margin-top: 8px;
+}
+.archive .post-item .info-news-meta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+    color: #475467;
+    font-size: 12px;
+}
+.widget_list_posts .widget-title,
+.widget_featured_course .widgettitle{
+    font-size: 18px;
+    color: #101828;
+    margin-bottom: 20px;    
+}
+.back a{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #000000;   
+    border-bottom: 1px solid #EAECF0;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.back a svg{
+    margin-right: 12px;  
+}
+.single .post-meta{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #344054;
+    margin-bottom: 12px;
+}
+.single .post-meta .post-date{
+    margin-left: 12px;
+    padding-left: 12px;
+    position: relative;
+}
+.single .post-meta .post-date::before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #98A2B3;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: -2.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.single .share-icons a{
+    width: 30px;
+    height: 30px;
+    background: #F5F6F7;
+    border: none;
+    line-height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    margin: 0;
+}
+.single .share-icons a:not(:first-child){
+    margin-left: 12px;
+}
+.single .share-icons a i{
+    color:#374151;
+}
+.single .entry-header{
+    margin-top: 16px;
+}
+.single .entry-header h1{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #101828;
+    margin-bottom: 0;
+}
+.single .entry-content{
+    padding-top: 8px;
+}
