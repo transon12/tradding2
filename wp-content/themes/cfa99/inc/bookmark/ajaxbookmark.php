@@ -52,10 +52,15 @@ function khuyennghicontent() {
       ob_start();
       $query=new WP_Query(array('post_type'=>'khuyennghi','post__in'=>array($id)));
       if($query->have_posts()):while($query->have_posts()):$query->the_post();
-      the_content();
-    endwhile;wp_reset_query();endif;
+
+        //$result = get_post_field('post_content', get_the_ID());
+        //$result =  get_the_content(get_the_ID());
+          the_field('phan_tich_ly_do');
+      endwhile;wp_reset_query();endif;
       $result = ob_get_clean();
+      
       return wp_send_json_success($result);
+
       die(); 
     }else{
         return wp_send_json_success('Lỗi không xác định');

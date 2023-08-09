@@ -8,8 +8,7 @@
                 <?php echo do_shortcode('[ux_sidebar id="menu-sidebar" class="menu__sidebar"]');?>
                 </div>
             </div>
-            test
-            <div class="col medium-8 small-12 large-6 snt-main-content">
+            <div class="col medium-8 small-12 large-9 snt-main-content">
                 <div class="snt-auto">
                     <div class="col-inner">
                         <div class="px bg-fff">
