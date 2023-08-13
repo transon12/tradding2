@@ -319,13 +319,14 @@ function pmpro_hide_acf_fields( $value, $post_id, $field ) {
 	}
 	if ( empty( $hasaccess ) && ( $name == 'gia_mua' || $name == 'gia_loi' || $name == 'gia_cat_lo' ) && ! is_archive() ) {
 
-			$value = 'xx.xxx';
+		//$value = 'xx.xxx';
 
 	}
 	// return
 	return $value;
 }
 add_filter( 'acf/format_value', 'pmpro_hide_acf_fields', 10, 3 );
+
 add_action( 'flatsome_after_header', 'runningfiled' );
 function runningfiled() {
 
@@ -574,4 +575,3 @@ function get_data_from_tradingview() {
 	}
 
 }
-

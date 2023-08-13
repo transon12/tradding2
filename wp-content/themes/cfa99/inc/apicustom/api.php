@@ -600,10 +600,26 @@ function setup_init() {
 					'callback' => 'cfa99_get_current_user_commissions_list',
 				)
 			);
+			register_rest_route(
+				'affiliate',
+				'/rules',
+				array(
+					'methods'  => 'GET',
+					'callback' => 'cfa99_get_affiliate_rules',
+				)
+			);
 		}
 	}
 
 	// Affiliate.
+	function cfa99_get_affiliate_rules() {
+		$post = get_post( '639' );
+		
+		return array(
+			'success' => true,
+			'data'    => apply_filters('the_content', $post->post_content),
+		);
+	}
 	function cfa99_get_current_user_commissions_list( $data ) {
 
 		if ( ! is_user_logged_in() ) {
@@ -1108,7 +1124,7 @@ function setup_init() {
 					);
 				 endwhile;
 				wp_reset_query();
-endif;
+		endif;
 			return array(
 				'success' => 'true',
 				'data'    => $data,
@@ -1410,10 +1426,56 @@ function update_driverid( $request_data ) {
 }
 
 function search_all_function( $request_data ) {
-	 $post_type = $request_data['type_data'];
+	$post_type = $request_data['type_data'];
 	$keyword    = $request_data['kw'];
 	$term       = $request_data['nganhid'];
 	$datapost   = array();
+
+
+	if ($post_type == 'khuyennghi') {
+		$user_id = get_current_user_id();
+
+		if($user_id == 0 || empty($user_id)){
+			$data = array(
+
+				"code" => "rest_cannot_read",
+				"message" => "Bạn chưa đăng nhập",
+				"data"  => [
+					"status" => 401
+				]
+			);
+			return new WP_REST_Response($data, 401);
+		}else{	
+			$membership_level = pmpro_getMembershipLevelForUser($user_id, false);
+	
+			$end_date = $membership_level->enddate;
+			$current_date = date();
+
+			if($membership_level == false || $membership_level->ID == 1){
+				$data = array(
+					"code" => "rest_cannot_read",
+					"message" => "Bạn chưa kích hoạt gói này, vui lòng nâng cấp.",
+					"data"  => [
+						"status" => 401
+					]
+				);
+			}elseif( $membership_level->ID == 9 && !empty($end_date) && $end_date < $current_date ){
+				$data = array(
+					"code" => "rest_cannot_read",
+					"message" => "Bạn chưa kích hoạt gói này, vui lòng nâng cấp",
+					"data"  => [
+						"status" => 401
+					]
+				);
+			}
+
+			if (isset($data)) {
+				return new WP_REST_Response($data, 401);
+			}
+		}
+	}
+
+	
 
 	if ( $post_type == 'post' || $post_type == 'stock_anlysic' || $post_type == 'market_analyst' || $post_type == 'lp_course' ) {
 		$querystock = new WP_Query(
@@ -1452,7 +1514,7 @@ function search_all_function( $request_data ) {
 					$idstock[] = get_the_ID();
 			endwhile;
 				wp_reset_query();
-endif;
+		endif;
 			$querystock = new WP_Query(
 				array(
 					'post_type'      => $post_type,
@@ -1482,7 +1544,7 @@ endif;
 					$idstock[] = get_the_ID();
 			endwhile;
 				wp_reset_query();
-endif;
+	endif;
 
 			$querystock = new WP_Query(
 				array(
@@ -1536,7 +1598,7 @@ endif;
 				$stockcode         = get_field( 'thong_tin_co_phieu_nong_ma_co_phieu', $id_stock_a );
 				$thumbnail         = get_the_post_thumbnail_url( $id_stock_a );
 			}
-			$lydo               = get_the_content( $post_id );
+			$lydo               = get_field( 'phan_tich_ly_do', $post_id );
 			$ly_do_bien_dong    = get_field( 'ly_do_bien_dong', $post_id );
 			$tuong_lai_xu_huong = get_field( 'xu_huong_tuong_lai', $post_id );
 			$gia_mua            = get_field( 'gia_mua', $post_id );
@@ -1555,9 +1617,9 @@ endif;
 				'gia_khang_cu_manh'  => $gia_khang_cu_manh,
 				'ly_do_bien_dong'    => $ly_do_bien_dong,
 				'tuong_lai_xu_huong' => $tuong_lai_xu_huong,
-				'gia_mua'            => $gia_mua,
-				'gia_loi'            => $gia_loi,
-				'gia_cat_lo'         => $gia_cat_lo,
+				'gia_mua'            => is_numeric($gia_mua) ? number_format($gia_mua, 0, ',', '.') : $gia_mua,
+				'gia_loi'            => is_numeric($gia_loi) ? number_format($gia_loi, 0, ',', '.') : $gia_loi,
+				'gia_cat_lo'         => is_numeric($gia_cat_lo) ? number_format($gia_cat_lo, 0, ',', '.') : $gia_cat_lo,
 				'content'            => strip_tags( $lydo ),
 				'follow_stock'       => $checkf,
 			);

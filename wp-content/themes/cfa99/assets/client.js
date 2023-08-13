@@ -1,6 +1,5 @@
 (function(jQuery) {
     jQuery(document).on('click','.code',function(){
-        console.log('aaa')
         var data=jQuery(this).find('.code_stocks').text();
         jQuery('.showstocks').click();
         setTimeout(function(){
@@ -17,16 +16,14 @@
         
         },1000);
     } )
-    jQuery(document).on('click','.item-code-btn', async function(){
+
+    jQuery(document).on('click','.item-code-btn', function(){
         var code = jQuery(this).attr('data-code');
         jQuery('#sidebar-chart iframe').attr('src','https://info.sbsi.vn/chart/?symbol='+code+'&language=vi&theme=light');
-        console.log('code ----',code)
-        
     });
    
 
 })(jQuery);
-
 
 jQuery(document).ready(function() {
     var ulNewsWrapperWidth = jQuery(".news-wrapper .inner ul").width();

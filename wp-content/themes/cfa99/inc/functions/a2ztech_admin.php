@@ -5,7 +5,7 @@ function remove_menus(){
     $username = $current_user->user_login;
     if ($username != 'a2ztech_admin') {
         remove_menu_page( 'themes.php' );               
-        //remove_menu_page( 'plugins.php' );             
+        remove_menu_page( 'plugins.php' );             
         //remove_menu_page( 'options-general.php' );      
         remove_menu_page( 'edit-comments.php' );   
         remove_menu_page( 'tools.php' );
